@@ -9,6 +9,7 @@ const forecast=require('./utils/forecast')
 
 
 const app=express()
+const port=process.env.PORT || 3000
 //Define paths for express config
 
 app.use(express.static(path.join(__dirname,'../public')))//setup static directory to server
@@ -109,6 +110,6 @@ app.get('*',(req,res)=>{//here * means that doesnot match that we provided
 
 
 
-app.listen(3000,()=>{
-    console.log('listen on port no 3000')
+app.listen(port,()=>{
+    console.log('listen on port no ' + port)
 })
